@@ -20,7 +20,7 @@ public class BaseTeestMedicine implements IAutoConstant{
 	{
 		WebDriverManager.chromedriver().setup();
 	}
-	@BeforeMethod
+	@BeforeMethod(alwaysRun = true)
 	public void openApp() {
 		softAssert=new SoftAssert();
 		
@@ -40,7 +40,7 @@ public class BaseTeestMedicine implements IAutoConstant{
 
 	}
 	
-	@AfterMethod
+	@AfterMethod(alwaysRun = true)
 	public void closeApp() {
 		Reporter.log("Closing the Browser",true);
 		driver.quit();
